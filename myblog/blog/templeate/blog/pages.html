@@ -1,0 +1,20 @@
+<!-- templates/blog/pages.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Páginas</title>
+</head>
+<body>
+    <h1>Páginas</h1>
+    <a href="{% url 'blog:create_page' %}">Crear Nueva Página</a>
+    <ul>
+        {% for page in pages %}
+            <li>
+                <a href="{% url 'blog:get_page' page.id %}">{{ page.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'blog:home' %}">Inicio</a>
+</body>
+</html>
